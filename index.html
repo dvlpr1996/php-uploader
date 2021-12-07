@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>file uploader</title>
+	<meta name="designer" content="nima jahan bakhshian">
+	<meta name="language" content="en">
+	<meta name="description" content="...">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<!-- todo : fav icon  -->
+	<!-- todo : icon  -->
+
+	<!-- [if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<![endif] -->
+
+</head>
+
+<body>
+
+	<div class="container">
+
+		<div class="uploader-header">
+			<h1>file uploader</h1>
+			<p>upload your images to compress them</p>
+		</div>
+
+		<div class="uplaoder-wrapper">
+			<div class="uploader">
+				<form action="#" method="POST" id="uploader" enctype="multipart/form-data">
+					<i class="fa fa-upload"></i>
+					<input type="file" name="user-files[]" draggable="true" ondragstart="a(aa)">
+
+					<div class="uploader-text">
+						<h3>
+							Drag and drop a file or click here
+						</h3>
+					</div>
+
+				</form>
+			</div>
+
+			<button type="submit" class="btn btn-upload" value="upload-btn" form="uploader">
+				upload
+			</button>
+
+		</div>
+
+		<div class="uploader-info">
+
+			<div class="uploader-content">
+				<img src="#" alt="#">
+				<span>name of img</span>
+				<span>size of img</span>
+				<span>cancel</span>
+			</div>
+
+		</div>
+
+	</div>
+	<script src="assets/vendor/jquery/jquery.min.js"></script>
+	<script src="assets/js/script.js"></script>
+	<noscript>your browser does not support the javascript</noscript>
+	<script>
+
+	</script>
+</body>
+
+</html>
