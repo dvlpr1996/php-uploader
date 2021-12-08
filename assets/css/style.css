@@ -34,7 +34,7 @@ body {
 
 .container {
 	background-color: #fff;
-	width: 500px;
+	width: 550px;
 	max-width: 100%;
 	padding: 20px;
 	border-radius: 10px;
@@ -47,14 +47,14 @@ body {
 }
 
 .uplaoder-wrapper {
-	width: 400px;
+	width: 500px;
 	margin: 40px auto;
 	text-align: center;
 }
 
 .uploader {
 	padding: 10px;
-	height: 150px;
+	height: 200px;
 	position: relative;
 	border-radius: 5px;
 	border: 3px dashed #2F80ECff;
@@ -79,11 +79,11 @@ input[type="file"] {
 
 .uploader-text {
 	text-align: center;
-	line-height: 5;
+	user-select: none;
 }
 
 .btn {
-	padding: 0.75rem 2rem;
+	padding: 1rem 2.5rem;
 	border: none;
 	border-radius: 50px;
 	outline: none;
@@ -108,12 +108,18 @@ input[type="file"] {
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
-	padding: 5px;
+	padding: 15px 5px;
 	border-radius: 5px;
-	border: 1px solid #2F80ECff;
+	border: 2px solid #2F80ECff;
 }
 
-.uploader-content img {
-	border: none;
-	border-radius: 5px;
+.uploader i {
+	font-size: 70px;
+	margin-top: 25px;
 }
+
+.uploader-content i {
+	font-size: 25px;
+	cursor: pointer;
+}
+/* todo : minify css and js */

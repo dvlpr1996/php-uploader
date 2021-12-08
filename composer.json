@@ -1,11 +1,13 @@
 {
-    "name": "dvlpr1996/php-uploader",
-    "description": "upload and compress images with php",
-    "authors": [
-        {
-            "name": "dvlpr1996",
-            "email": "nimajahanbakhshian@gmail.com"
-        }
-    ],
-    "require": {}
+	"name": "dvlpr1996/php-uploader",
+	"description": "upload and compress images with php",
+	"authors": [
+		{
+			"name": "dvlpr1996",
+			"email": "nimajahanbakhshian@gmail.com"
+		}
+	],
+	"autoload": {
+		"files": ["libs/helper.php"]
+	}
 }
