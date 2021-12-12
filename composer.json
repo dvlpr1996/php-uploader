@@ -9,5 +9,8 @@
 	],
 	"autoload": {
 		"files": ["libs/helper.php"]
+	},
+	"require": {
+		"matthiasmullie/minify": "^1.3"
 	}
 }
