@@ -1,29 +1,65 @@
 <?php
 
-function nice_dd($data)
+function nice_dd($data, string $type = "p")
 {
 	echo "<pre style='color: #9c4100; background: #fff; z-index: 999; position: relative; padding: 10px; margin: 10px; border-radius: 5px; border-left: 3px solid #c56705;'>";
-	print_r($data);
+	if ($type == "v") {
+		var_dump($data);
+	}
+	if ($type == "p") {
+		print_r($data);
+	}
 	echo "</pre>";
 	die();
 }
 
 function redirect(string $path)
 {
-	return header("Location:" . $path . ".php");
+	header("Location:" .  $path . ".php");
 	die();
 }
 
-function file_name($name)
+function e($data): string
 {
-	$name = (string)$name;
-	$name = strtolower($name);
-	$name = str_replace(" ", "-", $name);
-	return md5(time()) . "-" . $name;
+	return htmlspecialchars($data ?? '', ENT_QUOTES, 'UTF-8');
 }
 
-function des_file($path, $name)
+function download()
 {
-	$name = md5(time()) . "-" . $name;
-	return $path . $name;
+	$Path_to_upload_minify_file = "storage/minify";
+	$path_file = scandir($Path_to_upload_minify_file, SCANDIR_SORT_DESCENDING);
+	$path = pathinfo($path_file[0], PATHINFO_EXTENSION);
+	$extension = strtolower($path);
+	$mimetype = null;
+	$file = $Path_to_upload_minify_file . "/" . $path_file[0];
+
+	switch ($extension) {
+		case 'jpeg':
+		case 'jpg':
+			$mimetype = "image/jpg";
+			break;
+		case 'css':
+			$mimetype = "text/css";
+			break;
+
+		case 'js':
+			$mimetype = "application/x-javascript";
+			break;
+
+		default:
+			$mimetype = "application/force-download";
+	}
+
+	header('Pragma: public');
+	header('Expires: 0');
+	header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+	header('Cache-Control: private', false);
+	header('Content-Type: ' . $mimetype);
+	header('Content-Disposition: attachment; filename="' . basename($file) . '";');
+	header('Content-Transfer-Encoding: binary');
+	header('Content-Length: ' . filesize($file));
+
+	ob_clean();
+	flush();
+	readfile($file);
 }
